@@ -7,6 +7,12 @@ import Sytex
 import streamlit as st
 
 
+st.set_page_config(
+    page_title="Devoluciones OTC |Plataforma para rastrear Órdenes de Trabajo de Campo (OTCs) que han sido devueltas en algún punto del proceso.",
+    page_icon="images/logue.png",
+    layout="wide",
+)
+
 def find_task_status(id):
     Taskurl = f"https://app.sytex.io/api/statushistory/?content_type__model=task&object_id={id}&status_field__in=status,status_step"
     return Sytex.RunApi(Taskurl)
